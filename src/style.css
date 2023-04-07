@@ -1,3 +1,4 @@
+/*Especificaciones del modal*/
 .modalContainer{
     display: none;
     position: fixed;
@@ -12,11 +13,12 @@
 
 .modalContainer .modal-content{
     background-color: gray;
-    margin: auto;
+    margin: 10%;
     padding: 25px;
     border: 1px solid purple;
-    width: 30%;
+    /*width: 30%;*/
     height: 60%;
+
 }
 
 .modalContainer .close {
@@ -31,3 +33,5 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+/*Caracteristicas de la ventana*/
