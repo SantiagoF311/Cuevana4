@@ -20,8 +20,6 @@ fetch(URL)
     const vote=Number.parseFloat(data.vote_average).toFixed(1);
     const popularity=Number.parseFloat(data.popularity).toFixed(1);
     const originalTitle=data.original_title.toUpperCase();
-    console.log(originalTitle);
-    console.log(vote);
     
     const arraySubtValue=[vote + " / "+ data.vote_count,popularity,originalTitle,data.genres];
     imageMovie.src=`https://image.tmdb.org/t/p/w200${data.poster_path}`;
@@ -30,6 +28,8 @@ fetch(URL)
     for(let i=0; i<arraySubtitles.length; i++){
 
         const subtitle=document.createElement("p");
+        subtitle.style.padding='4% 2%';
+        subtitle.style.margin='0%';
         subtitle.textContent=`${arraySubtitles[i]}`
         dataKey.appendChild(subtitle);
         const subtitleValue=document.createElement("p");
@@ -60,14 +60,18 @@ fetch(URL)
     const sinopsis= data.overview;
     dataSinopsis.textContent=`${sinopsis}`;
 
+    //Datos en formato JSON
+    const baseData=JSON.stringify(data);
+    
+    
     /*Videos vistos*/
     buttonAddWath.addEventListener('click', function(){
-        localStorage.setItem("watched_video", data.original_title); 
+        localStorage.setItem("watch-video", baseData);
     });
 
     /*Peliculas en cola*/
     buttonAddQueue.addEventListener('click', function(){
-        localStorage.setItem("queue_movie", data.original_title); 
+        localStorage.setItem("queue_movie", baseData); 
     });
 })
 
