@@ -1,3 +1,7 @@
+* {
+  font-family: Roboto;
+}
+
 /*++++++++++++++++++++++++++++++ Mobiles/ Cellphones/small screens++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 @media screen and (max-width: 767px) {
   .header-container {
@@ -46,7 +50,7 @@
   }
   .footer-container {
     height: 100px;
-    background-color: grey;
+    background-color: #F7F7F7;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -237,13 +241,33 @@
     color: #FFFFFF;
   }
   .footer-container {
-    height: 100px;
-    background-color: grey;
+    height: 77px;
+    background-color: #F7F7F7;
     display: flex;
     flex-direction: row;
     align-items: baseline;
     justify-content: center;
   }
+
+  .searcher {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 336px;
+    height: 24px;
+    font-size: 14px;
+    background-color: transparent;
+    border-bottom: 0.5px solid #FFFFFF;
+  }
+
+  .searcher::placeholder {
+    color: #FFFFFF;
+  }
+
+  .button-search {
+    background-color: transparent;
+  }
+
   .footer-mobile {
     display: flex;
     flex-direction: row;
