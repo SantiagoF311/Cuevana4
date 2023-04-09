@@ -28,7 +28,8 @@ fetch(URL)
     for(let i=0; i<arraySubtitles.length; i++){
 
         const subtitle=document.createElement("p");
-        subtitle.style.padding='4% 2%';
+        //subtitle.classList='data_info';
+        subtitle.style.padding='6% 0%';
         subtitle.style.margin='0%';
         subtitle.textContent=`${arraySubtitles[i]}`
         dataKey.appendChild(subtitle);
