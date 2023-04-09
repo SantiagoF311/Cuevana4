@@ -23,18 +23,19 @@ function mostrarPeliculas(peliculas) {
         sinopsis.classList.add('pelicula__sinopsis');
 
         const genero = document.createElement('p');
-        genero.textContent = `${obtenerGeneros(pelicula.genre_ids)} `;
+        genero.textContent = `${obtenerGeneros(pelicula.genre_ids)} |`;
         genero.classList.add('pelicula__genero');
+        genero.style.display = 'inline-block';
 
         const estreno = document.createElement('p');
         estreno.textContent = ` ${new Date(pelicula.release_date).getFullYear()}`;
         estreno.classList.add('pelicula__estreno');
+        estreno.style.display = 'inline-block';
 
         const peliculaDiv = document.createElement('div');
         peliculaDiv.classList.add('pelicula');
         peliculaDiv.appendChild(imagen);
         peliculaDiv.appendChild(titulo);
-        //peliculaDiv.appendChild(sinopsis);
         peliculaDiv.appendChild(genero);
         peliculaDiv.appendChild(estreno);
 
