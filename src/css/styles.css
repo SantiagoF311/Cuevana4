@@ -13,10 +13,7 @@
   .icon {
     fill: white;
   }
-  /* .icon-search {
-  fill
-      color: red;
-  } */
+
   .nav-main {
     display: flex;
     justify-content: space-between;
@@ -266,6 +263,19 @@
 
   .button-search {
     background-color: transparent;
+    border: none;
+    position: relative;
+    right: 26px;
+    top: -3.5px;
+    width: 23px;
+    height: 23px;
+  }
+
+  .icon-search {
+    position: absolute;
+    right: 0px;
+    top: 3;
+    height: 15px;
   }
 
   .footer-mobile {
