@@ -4,7 +4,7 @@
     width: 100%;
     height: 230px;
     margin: 0 auto;
-    background-image: url(../../Images/FondoJPG.jpg);
+    background-image: url(../../../Images/FondoJPG.jpg);
   }
   .icon {
     fill: white;
@@ -98,7 +98,7 @@
     width: 100%;
     height: 230px;
     margin: 0 auto;
-    background-image: url(../../Images/FondoJPG.jpg);
+    background-image: url(../../../Images/FondoJPG.jpg);
   }
   .icon {
     fill: white;
@@ -195,7 +195,7 @@
     width: 100%;
     height: 230px;
     margin: 0 auto;
-    background-image: url(../../Images/FondoJPG.jpg);
+    background-image: url(../../../Images/FondoJPG.jpg);
   }
   .icon {
     fill: white;
@@ -285,4 +285,4 @@
   .nav-underline a.selected::after {
     opacity: 1;
   }
-}/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=Header__Footer.css.map */
