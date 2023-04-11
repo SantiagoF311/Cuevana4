@@ -294,6 +294,11 @@
     justify-content: center;
   }
 
+    div#form-container {
+      position: relative;
+      top: -25px;
+    }
+
   .searcher {
     border-top: none;
     border-left: none;
@@ -303,6 +308,21 @@
     font-size: 14px;
     background-color: transparent;
     border-bottom: 0.5px solid #FFFFFF;
+    color: #FFFFFF;
+  }
+
+  ul#searcherList {
+    margin-top: 0;
+    margin-left: 0;
+    padding: 3px;
+    width: 340px;
+    height: 40px;
+    color: #FFFFFF;  
+  }
+
+  .movieName {
+    list-style: none;
+    color: #FFFFFF;
   }
 
   .searcher:focus {
@@ -326,8 +346,8 @@
 
   .icon-search {
     position: absolute;
-    right: 0px;
-    top: 3;
+    right: 2px;
+    top: 3.5px;
     height: 15px;
   }
 

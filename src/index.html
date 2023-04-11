@@ -21,26 +21,29 @@
 
         <div class="nav-options">
           <ul class="list-nav nav-underline">
-            <li><a href="http://">HOME</a></li>
+            <li><a href="index.html">HOME</a></li>
             <li><a href="http://">MY LIBRARY</a></li>
           </ul>
         </div>
       </nav>
       <div class="search-o">
-        <form>
-          <input
-            class="searcher"
-            type="input"
-            name="searcher"
-            placeholder="Movie search"
-          />
-          <button class="button-search" type="submit">
-            <svg class="icon-search" width="20" height="20">
-              <use href="../Images/icons.svg#magnifier"></use>
-            </svg>
-            <!-- <img src="../Images/searchLUPA.svg" alt="Mi imagen SVG" /> -->
-          </button>
-        </form>
+        <div id="form-container">
+          <form>
+            <input
+              class="searcher"
+              type="input"
+              name="searcher"
+              placeholder="Movie search"
+            />
+            <button class="button-search" type="submit">
+              <svg class="icon-search" width="20" height="20">
+                <use href="../Images/icons.svg#magnifier"></use>
+              </svg>
+              <!-- <img src="../Images/searchLUPA.svg" alt="Mi imagen SVG" /> -->
+            </button>
+            <ul id="searcherList"></ul>
+          </form>
+        </div>
       </div>
     </header>
 
