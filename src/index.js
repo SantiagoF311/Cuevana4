@@ -9,6 +9,9 @@ const dataSinopsis = document.querySelector('.data_sinopsis');
 const arraySubtitles=["Vote / Votes","Popularity","Original Title","Genre"];
 const buttonAddWath=document.querySelector('.video');
 const buttonAddQueue=document.querySelector('.movie');
+const contentModal=document.querySelector('.sub-content');
+console.log(contentModal);
+const clickWindow=0;
 
 
 fetch(URL)
@@ -74,6 +77,9 @@ fetch(URL)
     buttonAddQueue.addEventListener('click', function(){
         localStorage.setItem("queue_movie", baseData); 
     });
+
+    
+
 })
 
 
@@ -82,7 +88,7 @@ if(document.querySelector("#ButtonModal")){
     var modal = document.querySelector("#myModal");
     var button = document.querySelector("#ButtonModal");
     var closeButton= document.querySelector(".button_close");
-
+    
 
     button.addEventListener("click", ()=>{
         modal.style.display="block";
@@ -90,6 +96,22 @@ if(document.querySelector("#ButtonModal")){
     
     closeButton.addEventListener("click", ()=>{
         modal.style.display="none";
+    })
+
+    document.addEventListener("keydown", (event)=>{
+        event.preventDefault();
+        if(event.code==='Escape'){
+            modal.style.display="none";
+        }
+    })
+
+    modal.addEventListener('click',()=>{
+        modal.style.display="none";
+    })
+
+    contentModal.addEventListener('click', (event)=>{
+        event.stopPropagation();
+        //console.log("content-modal");
     })
 
 }
