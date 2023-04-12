@@ -1,0 +1,439 @@
+* {
+    font-family: Roboto;
+}
+
+
+/*++++++++++++++++++++++++++++++ Mobiles/ Cellphones/small screens++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+@media screen and (max-width: 767px) {
+    .header-container {
+        width: 100%;
+        height: 230px;
+        margin: 0 auto;
+        background-image: url(/Images/FondoJPG.jpg);
+    }
+
+    .icon {
+        fill: white;
+    }
+
+    .nav-main {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .logo-name {
+        display: flex;
+        align-items: baseline;
+        margin-top: 48px;
+        margin-left: 23px;
+    }
+
+    .nav-options {
+        margin-top: 48px;
+        margin-right: 20px;
+    }
+
+    .list-nav {
+        display: flex;
+        gap: 39px;
+        list-style: none;
+    }
+
+    .list-nav a {
+        color: #FFFFFF;
+    }
+
+    .search-o {
+        margin-left: 21px;
+        margin-top: 38px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .footer-container {
+        height: 100px;
+        background-color: #F7F7F7;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-mobile {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .fotter-top-messa {
+        margin-top: 28.7px;
+        margin-bottom: 10px;
+    }
+
+    .fotter-top-messa p {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .footer-bottom p {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .nav-underline a::after {
+        content: "";
+        background-color: #FF6B08;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        height: 4px;
+        margin-top: 1px;
+        opacity: 0;
+    }
+
+    .nav-underline a {
+        position: relative;
+        text-decoration: none;
+    }
+
+    .nav-underline a:hover::after {
+        opacity: 1;
+    }
+
+    .nav-underline a.selected::after {
+        opacity: 1;
+    }
+}
+
+/*++++++++++++++++++++++++++++++ IPADS TABLETS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    .header-container {
+        width: 100%;
+        height: 230px;
+        margin: 0 auto;
+        background-image: url(../../Images/FondoJPG.jpg);
+    }
+
+    .icon {
+        fill: white;
+    }
+
+    .nav-main {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .logo-name {
+        display: flex;
+        align-items: baseline;
+        margin-top: 48px;
+        margin-left: 23px;
+    }
+
+    .nav-options {
+        margin-top: 48px;
+        margin-right: 20px;
+    }
+
+    .list-nav {
+        display: flex;
+        gap: 39px;
+        list-style: none;
+    }
+
+    .list-nav a {
+        color: #FFFFFF;
+    }
+
+    .search-o {
+        margin-left: 21px;
+        margin-top: 38px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .logo {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 35px;
+        margin-left: 24px;
+        color: #FFFFFF;
+    }
+
+    .footer-container {
+        height: 100px;
+        width: 100%;
+        background-color: grey;
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: center;
+    }
+
+    .footer-mobile {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-left: 4px;
+    }
+
+    .fotter-top-messa {
+        margin-top: 28.7px;
+        margin-bottom: 10px;
+    }
+
+    .fotter-top-messa p {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .footer-bottom p {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .nav-underline a::after {
+        content: "";
+        background-color: #FF6B08;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        height: 4px;
+        margin-top: 1px;
+        opacity: 0;
+    }
+
+    .nav-underline a {
+        position: relative;
+        text-decoration: none;
+    }
+
+    .nav-underline a:hover::after {
+        opacity: 1;
+    }
+
+    .nav-underline a.selected::after {
+        opacity: 1;
+    }
+}
+
+/*++++++++++++++++++++++++++++++ MOnitores, platallas Grandes ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+@media screen and (min-width: 1200px) {
+
+    /* debe tener un minimo de.. para que haga */
+    .header-container {
+        width: 100%;
+        height: 230px;
+        margin: 0 auto;
+        background-image: url(/src/images/libraryLogo.png);
+    }
+
+    .icon {
+        fill: white;
+    }
+
+    .nav-main {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .logo-name {
+        display: flex;
+        align-items: baseline;
+        margin-top: 48px;
+        margin-left: 23px;
+    }
+
+    .nav-options {
+        margin-top: 48px;
+        margin-right: 20px;
+    }
+
+    .list-nav {
+        display: flex;
+        gap: 39px;
+        list-style: none;
+    }
+
+    .list-nav a {
+        color: #FFFFFF;
+    }
+
+    .search-o {
+        margin-left: 21px;
+        margin-top: 38px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .logo {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 35px;
+        margin-left: 24px;
+        color: #FFFFFF;
+    }
+
+    .footer-container {
+        height: 77px;
+        background-color: #F7F7F7;
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: center;
+    }
+
+    
+
+    .button__container {
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        background-color: #FF6B08;
+        width: 70px;
+        height: 70px;
+    }
+
+    .footer-mobile {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-left: 4px;
+    }
+
+    .fotter-top-messa {
+        margin-top: 28.7px;
+        margin-bottom: 10px;
+    }
+
+    .fotter-top-messa p {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .footer-bottom p {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .nav-underline a::after {
+        content: "";
+        background-color: #FF6B08;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        height: 4px;
+        margin-top: 1px;
+        opacity: 0;
+    }
+
+    .nav-underline a {
+        position: relative;
+        text-decoration: none;
+    }
+
+    .nav-underline a:hover::after {
+        opacity: 1;
+    }
+
+    .nav-underline a.selected::after {
+        opacity: 1;
+    }
+}
+
+/*# sourceMappingURL=styles.css.map */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    margin-top: 60px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.peliculas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.pelicula {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.pelicula:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+@media only screen and (min-width: 768px) {
+    .pelicula {
+        width: calc(50% - 10px);
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .pelicula {
+        width: calc(33.33% - 10px);
+    }
+}
+
+.pelicula__imagen {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.pelicula__titulo {
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 10px;
+}
+
+.pelicula__estreno {
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 10px;
+    font-family: 'Roboto';
+    font-style: normal;
+    color: #FF6B08;
+}
+
+.pelicula__genero {
+    font-size: 1rem;
+    margin: 0;
+    padding: 10px;
+    font-family: 'Roboto';
+    font-style: normal;
+    color: #FF6B08;
+}
