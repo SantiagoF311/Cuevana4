@@ -1,8 +1,3 @@
-* {
-  font-family: Roboto;
-}
-
-
 /*++++++++++++++++++++++++++++++ Mobiles/ Cellphones/small screens++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 @media screen and (max-width: 767px) {
   .header-container {
@@ -11,55 +6,46 @@
     margin: 0 auto;
     background-image: url(../../Images/FondoJPG.jpg);
   }
-
   .icon {
     fill: white;
-    position: relative;
-    top: 5px;
   }
-
+  /* .icon-search {
+  fill
+      color: red;
+  } */
   .nav-main {
     display: flex;
     justify-content: space-between;
   }
-
   .logo-name {
     display: flex;
     align-items: baseline;
     margin-top: 48px;
     margin-left: 23px;
   }
-
   .nav-options {
     margin-top: 48px;
     margin-right: 20px;
   }
-
   .list-nav {
     display: flex;
     gap: 39px;
     list-style: none;
   }
-
   .list-nav a {
     color: #FFFFFF;
-    font-style: normal;
-font-weight: 500;
-font-size: 12px;
-line-height: 14px;
   }
-
   .search-o {
     margin-left: 21px;
     margin-top: 38px;
     display: flex;
     justify-content: center;
+    
   }
-
   .logo {
     display: none;
+    
   }
-
   .footer-container {
     height: 100px;
     background-color: #F7F7F7;
@@ -67,7 +53,6 @@ line-height: 14px;
     flex-direction: column;
     align-items: center;
   }
-
   .footer-mobile {
     display: flex;
     flex-direction: row;
@@ -75,22 +60,18 @@ line-height: 14px;
     justify-content: center;
     gap: 10px;
   }
-
   .fotter-top-messa {
     margin-top: 28.7px;
     margin-bottom: 10px;
   }
-
   .fotter-top-messa p {
     margin-top: 0px;
     margin-bottom: 0px;
   }
-
   .footer-bottom p {
     margin-top: 0px;
     margin-bottom: 0px;
   }
-
   .nav-underline a::after {
     content: "";
     background-color: #FF6B08;
@@ -102,65 +83,17 @@ line-height: 14px;
     margin-top: 1px;
     opacity: 0;
   }
-
   .nav-underline a {
     position: relative;
     text-decoration: none;
   }
-
   .nav-underline a:hover::after {
     opacity: 1;
   }
-
   .nav-underline a.selected::after {
     opacity: 1;
   }
-  .searcher {
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    width: 336px;
-    height: 24px;
-    font-size: 14px;
-    background-color: transparent;
-    border-bottom: 0.5px solid #FFFFFF;
-    color: #FFFFFF;
-  
-    font-style: normal;
-  font-weight: 400;
-  
-  line-height: 16px;
-  
-  }
-  .searcher:focus {
-    outline: none;
-    color: #FFFFFF;
-  }
-  
-  .searcher::placeholder {
-    color: #FFFFFF;
-  }
-  .icon-search {
-    position: absolute;
-    right: 2px;
-    top: 3.5px;
-    height: 15px;
-  }
-  .button-search {
-    background-color: transparent;
-    border: none;
-    position: relative;
-    right: 26px;
-    top: -3.5px;
-    width: 23px;
-    height: 23px;
-  }
-  div#form-container {
-    position: relative;
-    top: -25px;
-  }
 }
-
 /*++++++++++++++++++++++++++++++ IPADS TABLETS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   .header-container {
@@ -169,51 +102,37 @@ line-height: 14px;
     margin: 0 auto;
     background-image: url(../../Images/FondoJPG.jpg);
   }
-
   .icon {
     fill: white;
-    position: relative;
-    top: 5px;
   }
-
   .nav-main {
     display: flex;
     justify-content: space-between;
   }
-
   .logo-name {
     display: flex;
     align-items: baseline;
     margin-top: 48px;
     margin-left: 23px;
   }
-
   .nav-options {
     margin-top: 48px;
     margin-right: 20px;
   }
-
   .list-nav {
     display: flex;
     gap: 39px;
     list-style: none;
   }
-
   .list-nav a {
     color: #FFFFFF;
-    font-style: normal;
-font-weight: 500;
-font-size: 12px;
-line-height: 14px;
   }
-
   .search-o {
     margin-left: 21px;
     margin-top: 38px;
     display: flex;
     justify-content: center;
   }
-
   .logo {
     font-style: normal;
     font-weight: 500;
@@ -221,18 +140,16 @@ line-height: 14px;
     line-height: 35px;
     margin-left: 24px;
     color: #FFFFFF;
+    
   }
-
   .footer-container {
     height: 100px;
-    width: 100%;
-    background-color: grey;
+    background-color: #F7F7F7;
     display: flex;
     flex-direction: row;
     align-items: baseline;
     justify-content: center;
   }
-
   .footer-mobile {
     display: flex;
     flex-direction: row;
@@ -241,22 +158,18 @@ line-height: 14px;
     gap: 10px;
     margin-left: 4px;
   }
-
   .fotter-top-messa {
     margin-top: 28.7px;
     margin-bottom: 10px;
   }
-
   .fotter-top-messa p {
     margin-top: 0px;
     margin-bottom: 0px;
   }
-
   .footer-bottom p {
     margin-top: 0px;
     margin-bottom: 0px;
   }
-
   .nav-underline a::after {
     content: "";
     background-color: #FF6B08;
@@ -268,68 +181,19 @@ line-height: 14px;
     margin-top: 1px;
     opacity: 0;
   }
-
   .nav-underline a {
     position: relative;
     text-decoration: none;
   }
-
   .nav-underline a:hover::after {
     opacity: 1;
   }
-
   .nav-underline a.selected::after {
     opacity: 1;
   }
-  .searcher {
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    width: 336px;
-    height: 24px;
-    font-size: 14px;
-    background-color: transparent;
-    border-bottom: 0.5px solid #FFFFFF;
-    color: #FFFFFF;
-  
-    font-style: normal;
-  font-weight: 400;
-  
-  line-height: 16px;
-  }
-  .searcher:focus {
-    outline: none;
-    color: #FFFFFF;
-  }
-  
-  .searcher::placeholder {
-    color: #FFFFFF;
-  }
-  .icon-search {
-    position: absolute;
-    right: 2px;
-    top: 3.5px;
-    height: 15px;
-  }
-  .button-search {
-    background-color: transparent;
-    border: none;
-    position: relative;
-    right: 26px;
-    top: -3.5px;
-    width: 23px;
-    height: 23px;
-  }
-  div#form-container {
-    position: relative;
-    top: -25px;
-  }
 }
-
-
 /*++++++++++++++++++++++++++++++ MOnitores, platallas Grandes ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 @media screen and (min-width: 1200px) {
-
   /* debe tener un minimo de.. para que haga */
   .header-container {
     width: 100%;
@@ -337,49 +201,37 @@ line-height: 14px;
     margin: 0 auto;
     background-image: url(../../Images/FondoJPG.jpg);
   }
-
   .icon {
     fill: white;
   }
-
   .nav-main {
     display: flex;
     justify-content: space-between;
   }
-
   .logo-name {
     display: flex;
     align-items: baseline;
     margin-top: 48px;
     margin-left: 23px;
   }
-
   .nav-options {
     margin-top: 48px;
     margin-right: 20px;
   }
-
   .list-nav {
     display: flex;
     gap: 39px;
     list-style: none;
   }
-
   .list-nav a {
     color: #FFFFFF;
-    font-style: normal;
-font-weight: 500;
-font-size: 12px;
-line-height: 14px;
   }
-
   .search-o {
     margin-left: 21px;
     margin-top: 38px;
     display: flex;
     justify-content: center;
   }
-
   .logo {
     font-style: normal;
     font-weight: 500;
@@ -388,7 +240,6 @@ line-height: 14px;
     margin-left: 24px;
     color: #FFFFFF;
   }
-
   .footer-container {
     height: 77px;
     background-color: #F7F7F7;
@@ -397,12 +248,6 @@ line-height: 14px;
     align-items: baseline;
     justify-content: center;
   }
-
-    div#form-container {
-      position: relative;
-      top: -25px;
-    }
-
   .searcher {
     border-top: none;
     border-left: none;
@@ -412,54 +257,16 @@ line-height: 14px;
     font-size: 14px;
     background-color: transparent;
     border-bottom: 0.5px solid #FFFFFF;
-    color: #FFFFFF;
-
-    font-style: normal;
-font-weight: 400;
-
-line-height: 16px;
   }
-
-  ul#searcherList {
-    margin-top: 0;
-    margin-left: 0;
-    padding: 3px;
-    width: 340px;
-    height: 40px;
-    color: #FFFFFF;  
-  }
-
-  .movieName {
-    list-style: none;
+  .searcher::-moz-placeholder {
     color: #FFFFFF;
   }
-
-  .searcher:focus {
-    outline: none;
-    color: #FFFFFF;
-  }
-
   .searcher::placeholder {
     color: #FFFFFF;
   }
-
   .button-search {
     background-color: transparent;
-    border: none;
-    position: relative;
-    right: 26px;
-    top: -3.5px;
-    width: 23px;
-    height: 23px;
   }
-
-  .icon-search {
-    position: absolute;
-    right: 2px;
-    top: 3.5px;
-    height: 15px;
-  }
-
   .footer-mobile {
     display: flex;
     flex-direction: row;
@@ -468,22 +275,18 @@ line-height: 16px;
     gap: 10px;
     margin-left: 4px;
   }
-
   .fotter-top-messa {
     margin-top: 28.7px;
     margin-bottom: 10px;
   }
-
   .fotter-top-messa p {
     margin-top: 0px;
     margin-bottom: 0px;
   }
-
   .footer-bottom p {
     margin-top: 0px;
     margin-bottom: 0px;
   }
-
   .nav-underline a::after {
     content: "";
     background-color: #FF6B08;
@@ -495,99 +298,15 @@ line-height: 16px;
     margin-top: 1px;
     opacity: 0;
   }
-
   .nav-underline a {
     position: relative;
     text-decoration: none;
   }
-
   .nav-underline a:hover::after {
     opacity: 1;
   }
-
   .nav-underline a.selected::after {
     opacity: 1;
   }
 }
-/*# sourceMappingURL=styles.css.map */
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  margin-top: 60px;
-}
-
-h1 {
-  font-size: 2.5rem;
-  text-align: center;
-  margin-top: 50px;
-  margin-bottom: 20px;
-}
-
-.peliculas {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.pelicula {
-  width: 100%;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease-in-out;
-}
-
-.pelicula:hover {
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-}
-
-@media only screen and (min-width: 768px) {
-  .pelicula {
-    width: calc(50% - 10px);
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  .pelicula {
-    width: calc(33.33% - 10px);
-  }
-}
-
-.pelicula__imagen {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  border-radius: 5px;
-}
-
-.pelicula__titulo {
-  font-size: 1.5rem;
-  margin: 0;
-  padding: 10px;
-}
-
-.pelicula__estreno {
-  font-size: 1.5rem;
-  margin: 0;
-  padding: 10px;
-  font-family: 'Roboto';
-  font-style: normal;
-  color: #FF6B08;
-}
-
-.pelicula__genero {
-  font-size: 1rem;
-  margin: 0;
-  padding: 10px;
-  font-family: 'Roboto';
-  font-style: normal;
-  color: #FF6B08;
-}
+/*# sourceMappingURL=Header__Footer.css.map */
