@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //const getButton = querySelector("#ButtonModal");
 const apiKey = '20979babc91cbc65cdd918b0c714bda3';
 const URL= `https://api.themoviedb.org/3/movie/76341?api_key=${apiKey}`;
@@ -115,3 +116,11 @@ if(document.querySelector("#ButtonModal")){
     })
 
 }
+=======
+import { URL, modal } from './js/modal.js';
+
+fetch(URL)
+  .then(Response => Response.json())
+  .then(data => modal(data.results))
+  .catch(error => console.log(error));
+>>>>>>> origin/modalChsnges
