@@ -3,6 +3,8 @@ export const API_KEY = '2c16d3527aa463666a5b1d2730c96dac';
 export const URL_POPULARES =
     `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=es-ES&page=1`;
 export const contenedorPeliculas = document.getElementById('peliculas');
+import { appearModal } from './modalMovies.js';
+
 
 export function mostrarPeliculas(peliculas) {
 
@@ -10,6 +12,7 @@ export function mostrarPeliculas(peliculas) {
     contenedorPeliculas.innerHTML = '';
 
     peliculas.forEach((pelicula) => {
+        
         const imagen = document.createElement('img');
         imagen.src = `https://image.tmdb.org/t/p/w500${pelicula.poster_path}`;
         imagen.alt = pelicula.title;
@@ -41,6 +44,12 @@ export function mostrarPeliculas(peliculas) {
         peliculaDiv.appendChild(estreno);
 
         contenedorPeliculas.appendChild(peliculaDiv);
+
+         /*Click on modal*/
+         imagen.addEventListener('click',()=>{
+            appearModal(pelicula);
+         })
+         
     });
 }
 
