@@ -1,6 +1,6 @@
 //const getButton = querySelector("#ButtonModal");
 export const apiKey = '20979babc91cbc65cdd918b0c714bda3';
-export const URL = `https://api.themoviedb.org/3/movie/76341?api_key=${apiKey}`;
+export const URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=es-ES&page=1`;
 export const titleMovie = document.querySelector('.movie_title');
 export const imageMovie = document.querySelector('.movie_img');
 export const dataKey = document.querySelector('.data_key');
