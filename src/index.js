@@ -21,6 +21,7 @@ fetch(URL)
     return response.json();
 })
 .then(data=>{
+    console.log(data);
     const vote=Number.parseFloat(data.vote_average).toFixed(1);
     const popularity=Number.parseFloat(data.popularity).toFixed(1);
     const originalTitle=data.original_title.toUpperCase();
