@@ -484,6 +484,8 @@ h1 {
   color: #FF6B08;
 }
 
+/*Modal*/
+
 .modalContainer {
   display: block;
   position: fixed;
@@ -624,3 +626,31 @@ h1 {
 }
 
 /*# sourceMappingURL=index.css.map */
+
+/*Especificaciones del modal*/
+
+.modalContainer .modal-content {
+  background-color: gray;
+  margin: 10%;
+  padding: 25px;
+  border: 1px solid purple;
+  /*width: 30%;*/
+  height: 60%;
+
+}
+
+.modalContainer .close {
+  color: red;
+  float: right;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.modalContainer .close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*Caracteristicas de la ventana*/
