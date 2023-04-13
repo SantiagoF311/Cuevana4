@@ -5,6 +5,8 @@ export const URL_POPULARES =
 export const contenedorPeliculas = document.getElementById('peliculas');
 
 export function mostrarPeliculas(peliculas) {
+
+    console.log(peliculas);
     contenedorPeliculas.innerHTML = '';
 
     peliculas.forEach((pelicula) => {
