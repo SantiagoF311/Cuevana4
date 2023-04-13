@@ -1,53 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./index.css" />
-    <title>Modal</title>
-  </head>
-  <body>
-    <button id="ButtonModal">Abrir modal</button>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./index.css">
+  <title>Modal</title>
+</head>
+<body>
+  
+  <button id="ButtonModal">Abrir modal</button>
 
-    <div id="myModal" class="modalContainer">
-      <div class="modal-content">
-        <!--Boton de cierre-->
-        <button class="button_close">X</button>
-        <!--inicio de contenedores-->
-        <div class="sub-content">
-          <div class="sub-content_data">
-            <img class="movie_img" alt="Logo pelicula" />
+
+  <div id="myModal" class="modalContainer"> 
+    <div class="modal-content">
+      <!--Boton de cierre-->
+      <button class="button_close">X</button>
+      <!--inicio de contenedores-->
+      <div class="sub-content">
+        <div class="sub-content_data">
+          <img class="movie_img" alt="Logo pelicula">
+        </div>
+        <div class="sub-content_data">
+        
+          <h2 class="movie_title">A FISTFUL OF LEAD</h2>
+          <!--datos-->
+          <div class="data_movie">
+            <div class="data_key"></div>
+            <div class="data_value"></div>
           </div>
-          <div class="sub-content_data">
-            <h2 class="movie_title">A FISTFUL OF LEAD</h2>
-            <!--datos-->
-            <div class="data_movie">
-              <div class="data_key"></div>
-              <div class="data_value"></div>
+          <div>
+            <h2>ABOUT</h2>
+            <div class="data_sinopsis">
             </div>
-            <div>
-              <h2>ABOUT</h2>
-              <div class="data_sinopsis"></div>
-              <div class="add_info">
-                <button class="add-button video">ADD TO WATCH</button>
-                <button class="add-button movie">ADD TO QUEUE</button>
-              </div>
+            <div class="add_info">
+              <button class="add-button video">ADD TO WATCH</button>
+              <button class="add-button movie">ADD TO QUEUE</button>
             </div>
           </div>
         </div>
-        <!--imagen-->
-
-        <!--contenido de la pelicula-->
       </div>
-    </div>
 
-    <script type="module" src="index.js"></script>
-  </body>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
 </html>

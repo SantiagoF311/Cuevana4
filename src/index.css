@@ -75,7 +75,7 @@
 }
 .movie_title {
   margin: 0% 0% 2%;
-  font-size: 30px;
+  font-size: 200%;
   text-transform: uppercase;
 }
 
@@ -85,6 +85,7 @@
   border-radius: 5px;
   border: 1px solid #000000;
   margin-right: 3%;
+  margin-top: 2%;
 }
 .add-button:hover {
   background-color: #FF6B01;
@@ -105,7 +106,7 @@
     padding: 8% 4%;
   }
 }
-@media screen and (min-width: 220px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .sub-content {
     flex-direction: column;
     padding: 13% 3%;
@@ -120,7 +121,7 @@
   .movie_title {
     font-size: 20px;
   }
-  .add_button {
+  .add-button {
     width: 46%;
   }
 }/*# sourceMappingURL=index.css.map */
