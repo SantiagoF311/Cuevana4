@@ -646,6 +646,8 @@ h1 {
 .contenedor-paginacion {
   display: flex;
   justify-content: center;
+  margin-bottom: 30px;
+  margin-top: 20px;
 }
 
 .pagina {
