@@ -231,7 +231,7 @@
   .footer-container {
     height: 100px;
     width: 100%;
-    background-color: grey;
+    background-color: #F7F7F7;
     display: flex;
     flex-direction: row;
     align-items: baseline;
@@ -262,17 +262,21 @@
     margin-bottom: 0px;
   }
 
-  .nav-underline a::after {
-    content: "";
-    background-color: #FF6B08;
-    position: absolute;
-    left: 0;
-    top: 100%;
-    width: 100%;
-    height: 4px;
-    margin-top: 1px;
-    opacity: 0;
-  }
+    .nav-underline a::after {
+      content: "";
+      background-color: #FF6B08;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      width: 100%;
+      height: 4px;
+      margin-top: 1px;
+      opacity: 0;
+    }
+  
+    .nav-underline a.active::after {
+      opacity: 1;
+    }
 
   .nav-underline a {
     position: relative;
@@ -341,72 +345,157 @@
 @media screen and (min-width: 1200px) {
 
   /* debe tener un minimo de.. para que haga */
-  .header-container {
-    width: 100%;
-    height: 230px;
-    margin: 0 auto;
-    background-image: url(../../Images/FondoJPG.jpg);
-  }
-
-  .icon {
-    fill: white;
-  }
-
-  .nav-main {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .logo-name {
-    display: flex;
-    align-items: baseline;
-    margin-top: 48px;
-    margin-left: 23px;
-  }
-
-  .nav-options {
-    margin-top: 48px;
-    margin-right: 20px;
-  }
-
-  .list-nav {
-    display: flex;
-    gap: 39px;
-    list-style: none;
-  }
-
-  .list-nav a {
-    color: #FFFFFF;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 14px;
-  }
-
-  .search-o {
-    margin-left: 21px;
-    margin-top: 38px;
-    display: flex;
-    justify-content: center;
-  }
-
-  .logo {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 30px;
-    line-height: 35px;
-    margin-left: 24px;
-    color: #FFFFFF;
-  }
-
-  .footer-container {
-    height: 77px;
-    background-color: #F7F7F7;
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    justify-content: center;
-  }
+  @media screen and (min-width: 1200px) {
+  
+      /* debe tener un minimo de.. para que haga */
+      .header-container {
+        width: 100%;
+        height: 230px;
+        margin: 0 auto;
+        background-image: url(../../Images/FondoJPG.jpg);
+      }
+  
+      .icon {
+        fill: white;
+      }
+  
+      .nav-main {
+        display: flex;
+        justify-content: space-between;
+      }
+  
+      .logo-name {
+        display: flex;
+        align-items: baseline;
+        margin-top: 48px;
+        margin-left: 23px;
+      }
+  
+      .nav-options {
+        margin-top: 48px;
+        margin-right: 20px;
+      }
+  
+      .list-nav {
+        display: flex;
+        gap: 39px;
+        list-style: none;
+      }
+  
+      .list-nav a {
+        color: #FFFFFF;
+      }
+  
+      .search-o {
+        margin-left: 21px;
+        margin-top: 38px;
+        display: flex;
+        justify-content: center;
+      }
+  
+      .logo {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 35px;
+        margin-left: 24px;
+        color: #FFFFFF;
+      }
+  
+      .footer-container {
+        height: 77px;
+        background-color: #F7F7F7;
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: center;
+      }
+  
+  
+  
+      .button__container {
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-color: blue;
+        width: 340px;
+        height: 60px;
+      }
+  
+      .library__Button {
+        margin: 7.5px;
+        width: 200px;
+        height: 50px;
+        border-radius: 5px;
+        color: white;
+        border: 1px solid #FFFFFF;
+        background-color: transparent;
+      }
+  
+      .library__Button:hover {
+        background-color: #FF6B08;
+        border-style: none;
+        cursor: pointer;
+      }
+  
+      .library__Button:focus {
+        background-color: #FF6B08;
+        border-style: none;
+      }
+  
+      .footer-mobile {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-left: 4px;
+      }
+  
+      .fotter-top-messa {
+        margin-top: 28.7px;
+        margin-bottom: 10px;
+      }
+  
+      .fotter-top-messa p {
+        margin-top: 0px;
+        margin-bottom: 0px;
+      }
+  
+      .footer-bottom p {
+        margin-top: 0px;
+        margin-bottom: 0px;
+      }
+  
+             .nav-underline a::after {
+               content: "";
+               background-color: #FF6B08;
+               position: absolute;
+               left: 0;
+               top: 100%;
+               width: 100%;
+               height: 4px;
+               margin-top: 1px;
+               opacity: 0;
+             }
+      
+             .nav-underline a.active::after {
+               opacity: 1;
+             }
+      
+             .nav-underline a {
+               position: relative;
+               text-decoration: none;
+             }
+      
+             .nav-underline a:hover::after {
+               opacity: 1;
+             }
+  
+      
+    }
 
   div#form-container {
     position: relative;
@@ -470,54 +559,6 @@
     height: 15px;
   }
 
-  .footer-mobile {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-left: 4px;
-  }
-
-  .fotter-top-messa {
-    margin-top: 28.7px;
-    margin-bottom: 10px;
-  }
-
-  .fotter-top-messa p {
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
-  .footer-bottom p {
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
-  .nav-underline a::after {
-    content: "";
-    background-color: #FF6B08;
-    position: absolute;
-    left: 0;
-    top: 100%;
-    width: 100%;
-    height: 4px;
-    margin-top: 1px;
-    opacity: 0;
-  }
-
-  .nav-underline a {
-    position: relative;
-    text-decoration: none;
-  }
-
-  .nav-underline a:hover::after {
-    opacity: 1;
-  }
-
-  .nav-underline a.selected::after {
-    opacity: 1;
-  }
 }
 
 /*# sourceMappingURL=styles.css.map */
@@ -549,10 +590,9 @@ h1 {
 }
 
 .pelicula {
-  width: 100%;
-  border-radius: 5px;
+  max-width: 370px;
+  border-radius: 15px;
   margin-bottom: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
 }
 
@@ -575,9 +615,8 @@ h1 {
 .pelicula__imagen {
   display: block;
   max-width: 100%;
-  max-height: 553px;
+  height: 556px;
   border-radius: 5px;
-  margin: 0;
 }
 
 .pelicula__titulo {
