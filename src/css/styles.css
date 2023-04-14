@@ -14,6 +14,8 @@
 
   .icon {
     fill: white;
+    position: relative;
+    top: 5px;
   }
 
   .nav-main {
@@ -41,6 +43,10 @@
 
   .list-nav a {
     color: #FFFFFF;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
   }
 
   .search-o {
@@ -109,6 +115,55 @@
   .nav-underline a.selected::after {
     opacity: 1;
   }
+
+  .searcher {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 336px;
+    height: 24px;
+    font-size: 14px;
+    background-color: transparent;
+    border-bottom: 0.5px solid #FFFFFF;
+    color: #FFFFFF;
+
+    font-style: normal;
+    font-weight: 400;
+
+    line-height: 16px;
+
+  }
+
+  .searcher:focus {
+    outline: none;
+    color: #FFFFFF;
+  }
+
+  .searcher::placeholder {
+    color: #FFFFFF;
+  }
+
+  .icon-search {
+    position: absolute;
+    right: 2px;
+    top: 3.5px;
+    height: 15px;
+  }
+
+  .button-search {
+    background-color: transparent;
+    border: none;
+    position: relative;
+    right: 26px;
+    top: -3.5px;
+    width: 23px;
+    height: 23px;
+  }
+
+  div#form-container {
+    position: relative;
+    top: -25px;
+  }
 }
 
 /*++++++++++++++++++++++++++++++ IPADS TABLETS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
@@ -122,6 +177,8 @@
 
   .icon {
     fill: white;
+    position: relative;
+    top: 5px;
   }
 
   .nav-main {
@@ -149,6 +206,10 @@
 
   .list-nav a {
     color: #FFFFFF;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
   }
 
   .search-o {
@@ -225,7 +286,56 @@
   .nav-underline a.selected::after {
     opacity: 1;
   }
+
+  .searcher {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 336px;
+    height: 24px;
+    font-size: 14px;
+    background-color: transparent;
+    border-bottom: 0.5px solid #FFFFFF;
+    color: #FFFFFF;
+
+    font-style: normal;
+    font-weight: 400;
+
+    line-height: 16px;
+  }
+
+  .searcher:focus {
+    outline: none;
+    color: #FFFFFF;
+  }
+
+  .searcher::placeholder {
+    color: #FFFFFF;
+  }
+
+  .icon-search {
+    position: absolute;
+    right: 2px;
+    top: 3.5px;
+    height: 15px;
+  }
+
+  .button-search {
+    background-color: transparent;
+    border: none;
+    position: relative;
+    right: 26px;
+    top: -3.5px;
+    width: 23px;
+    height: 23px;
+  }
+
+  div#form-container {
+    position: relative;
+    top: -25px;
+  }
 }
+
 
 /*++++++++++++++++++++++++++++++ MOnitores, platallas Grandes ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 @media screen and (min-width: 1200px) {
@@ -267,6 +377,10 @@
 
   .list-nav a {
     color: #FFFFFF;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
   }
 
   .search-o {
@@ -294,10 +408,10 @@
     justify-content: center;
   }
 
-    div#form-container {
-      position: relative;
-      top: -25px;
-    }
+  div#form-container {
+    position: relative;
+    top: -25px;
+  }
 
   .searcher {
     border-top: none;
@@ -309,6 +423,11 @@
     background-color: transparent;
     border-bottom: 0.5px solid #FFFFFF;
     color: #FFFFFF;
+
+    font-style: normal;
+    font-weight: 400;
+
+    line-height: 16px;
   }
 
   ul#searcherList {
@@ -317,7 +436,7 @@
     padding: 3px;
     width: 340px;
     height: 40px;
-    color: #FFFFFF;  
+    color: #FFFFFF;
   }
 
   .movieName {
@@ -400,7 +519,14 @@
     opacity: 1;
   }
 }
+
 /*# sourceMappingURL=styles.css.map */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
 
 .container {
   max-width: 1200px;
@@ -450,8 +576,8 @@ h1 {
   display: block;
   max-width: 100%;
   max-height: 553px;
-  height: auto;
   border-radius: 5px;
+  margin: 0;
 }
 
 .pelicula__titulo {
@@ -477,173 +603,3 @@ h1 {
   font-style: normal;
   color: #FF6B08;
 }
-
-/*Modal*/
-
-.modalContainer {
-  background-color: rgba(0, 0, 0, 0.25);
-  display: none;
-  position: fixed;
-  z-index: 100;
-  top: -37;
-  size: 100%;
-  width: 100%;
-}
-
-.modalContainer .modal-content {
-  position: relative;
-  top: -85;
-  background-color: #FFFFFF;
-  left: 11%;
-  width: 1000px;
-}
-
-.modalContainer .button_close {
-  position: relative;
-  left: 975;
-  margin-left: 0;
-  color: rgb(4, 6, 22);
-  font-size: 18px;
-  border: 1px solid transparent;
-  background-color: transparent;
-}
-
-.modalContainer .button_close:hover {
-  color: #FF6B01;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.data_info {
-  margin: 0%;
-  padding: 4% 2%;
-}
-
-.data_info:hover {
-  background-color: #FF6B01;
-  border-radius: 5px;
-  color: #FFFFFF;
-}
-
-.data_movie {
-  display: flex;
-  padding-top: 2%;
-}
-
-.data_key {
-  width: 40%;
-  color: #8c8c8c;
-}
-
-.data_value {
-  width: 60%;
-}
-
-.data_sinopsis {
-  padding: 2% 0% 5%;
-}
-
-.sub-content {
-  display: flex;
-  padding: 5% 3%;
-}
-
-.sub-content_data {
-  width: 50%;
-}
-
-.movie_img {
-  width: 90%;
-  border-radius: 10px;
-}
-
-.movie_title {
-  margin: 0% 0% 2%;
-  font-size: 200%;
-  text-transform: uppercase;
-}
-
-.add-button {
-  background-color: #FFFFFF;
-  padding: 4%;
-  border-radius: 5px;
-  border: 1px solid #000000;
-  margin-right: 3%;
-  margin-top: 2%;
-}
-
-.add-button:hover {
-  background-color: #FF6B01;
-  color: #FFFFFF;
-  border: 1px solid #FFFFFF;
-}
-
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .modalContainer .modal-content {
-    width: 70%;
-  }
-
-  .modalContainer .button_close {
-    margin: 2% 2% 0%;
-    right: 15%;
-    padding: 0%;
-  }
-
-  .sub-content {
-    padding: 8% 4%;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .sub-content {
-    flex-direction: column;
-    padding: 13% 3%;
-  }
-
-  .sub-content_data {
-    width: 100%;
-  }
-
-  .movie_img {
-    width: 100%;
-    padding-bottom: 10%;
-  }
-
-  .movie_title {
-    font-size: 20px;
-  }
-
-  .add-button {
-    width: 46%;
-  }
-}
-
-/*# sourceMappingURL=index.css.map */
-
-/*Especificaciones del modal*/
-
-
-.modalContainer .modal-content {
-  background-color: #FFFFFF;
-  margin: 10%;
-  padding: 25px;
-  /*width: 30%;*/
-  height: 60%;
-
-}
-
-.modalContainer .close {
-  color: red;
-  float: right;
-  font-size: 26px;
-  font-weight: bold;
-}
-
-.modalContainer .close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/*Caracteristicas de la ventana*/
