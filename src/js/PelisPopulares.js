@@ -47,6 +47,7 @@ export function mostrarPeliculas(peliculas) {
 
          /*Click on modal*/
          imagen.addEventListener('click',()=>{
+            console.log("click-image");
             appearModal(pelicula);
          })
          

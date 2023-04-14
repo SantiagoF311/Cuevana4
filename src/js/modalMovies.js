@@ -32,7 +32,7 @@
             subtitleValue.style.width='fit-content';
             subtitleValue.classList='data_info';
     
-            if(arraySubtitles[i]==="Genre"){
+            /*if(arraySubtitles[i]==="Genre"){
                 const divGenre=document.createElement('div');
                 divGenre.classList.add('data_genre');
                 dataValue.appendChild(divGenre);
@@ -47,8 +47,9 @@
     
                 subtitleValue.textContent=`${arraySubtValue[i]}`;
                 dataValue.appendChild(subtitleValue);
-            }
-           
+            }*/
+            subtitleValue.textContent=`${arraySubtValue[i]}`;
+            dataValue.appendChild(subtitleValue);
     
         }
 
@@ -91,13 +92,10 @@
     export function appearModal(pelicula){
 
             var modal = document.querySelector("#myModal");
-            var button = document.querySelector("#ButtonModal");
+            //var button = document.querySelector("#ButtonModal");
             var closeButton= document.querySelector(".button_close");
-            
-            
-            button.addEventListener("click", ()=>{
-                modal.style.display="block";
-            })
+            modal.style.display="block";
+        
             
             /*Cierre del modal*/
             function closeWindow(){
@@ -117,7 +115,7 @@
                 event.stopPropagation();
             })
 
-        roamDAta(pelicula);
+        //roamDAta(pelicula);
     }
    
     
