@@ -11,6 +11,9 @@ const buttonAddQueue=document.querySelector('.movie');
 const contentModal=document.querySelector('.sub-content');
 const buttonprueba= document.querySelector('.button');
 export let getSubtitle, getSubtitleValue;
+const orangeColor = '#FF6B01';
+const whiteColor = 'white';
+const blackColor = 'black';
 
 
 
@@ -51,15 +54,41 @@ function putData(data){
         dataValue.appendChild(subtitleValue);
         //localStorage.removeItem('pelicula');
     }
-    
-    
+
+    //Sinopsis
+    const sinopsis = data.overview;
+    dataSinopsis.textContent = `${sinopsis}`;
+
+    //Datos en formato JSON
+    const baseData = JSON.stringify(data);
+
+    //habilitar botones
+
+    function changeButton(button, background, letter, border) {
+      button.style.backgroundColor = background;
+      button.style.color = letter;
+      button.style.borderColor = border;
+    }
+
+    /*Videos vistos*/
+    buttonAddWath.addEventListener('click', function () {
+      localStorage.setItem('watch-video', baseData);
+      localStorage.removeItem('queue_movie');
+      changeButton(buttonAddWath, orangeColor, whiteColor, whiteColor);
+      changeButton(buttonAddQueue, whiteColor, blackColor, blackColor);
+    });
+
+    /*Peliculas en cola*/
+    buttonAddQueue.addEventListener('click', function () {
+      localStorage.setItem('queue_movie', baseData);
+      localStorage.removeItem('watch-video');
+      changeButton(buttonAddQueue, orangeColor, whiteColor, whiteColor);
+      changeButton(buttonAddWath, whiteColor, blackColor, blackColor);
+    });
 
 }
 
-function cleanData(subtitle, subtitleValue){
-    subtitle.innerHTML='';
-    subtitleValue.innerHTML='';
-}
+
 
 /*fetch(URL)
 .then(response=>{
@@ -146,11 +175,15 @@ function appearModal(){
     document.addEventListener("keydown", (event)=>{
         event.preventDefault();
         if(event.code==='Escape'){
+            dataKey.innerHTML='';
+            dataValue.innerHTML='';
             modal.style.display="none";
         }
     })
 
     modal.addEventListener('click',()=>{
+        dataKey.innerHTML='';
+        dataValue.innerHTML='';
         modal.style.display="none";
     })
 
