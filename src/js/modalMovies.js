@@ -15,6 +15,8 @@ const orangeColor = '#FF6B01';
 const whiteColor = 'white';
 const blackColor = 'black';
 
+import {obtenerGeneros} from './PelisPopulares';
+
 
 
 export function createModal(){

@@ -185,7 +185,7 @@ h1 {
     padding: 8% 4%;
   }
 }
-@media screen and (min-width: 220px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .sub-content {
     flex-direction: column;
     padding: 13% 3%;
