@@ -14,8 +14,8 @@ export let getSubtitle, getSubtitleValue;
 const orangeColor = '#FF6B01';
 const whiteColor = 'white';
 const blackColor = 'black';
+import { obtenerGeneros } from './PelisPopulares.js';
 
-import {obtenerGeneros} from './PelisPopulares';
 
 
 
@@ -28,13 +28,13 @@ export function createModal(){
 function putData(data){
     console.log("data: ", data);
     const vote=data.vote_average;
-    const popularity=data.popularity;
+    const popularity=Number.parseFloat(data.popularity).toFixed(1);;
     const originalTitle=data.original_title.toUpperCase();
     const voteCount= data.vote_count;
     const genres= data.genre_ids;
     const arraySubtValue=[vote + " / "+ voteCount,popularity,originalTitle,genres];
 
-    imageMovie.src=`https://image.tmdb.org/t/p/w200${data.poster_path}`;
+    imageMovie.src=`https://image.tmdb.org/t/p/w500${data.poster_path}`;
     titleMovie.textContent=originalTitle;
 
     
@@ -52,8 +52,23 @@ function putData(data){
         const subtitleValue=document.createElement("p");
         subtitleValue.style.width='fit-content';
         subtitleValue.classList='data_info';
-        subtitleValue.textContent=`${arraySubtValue[i]}`;
-        dataValue.appendChild(subtitleValue);
+
+        if(arraySubtitles[i]==="Genre"){
+            /*Genres*/
+            const divGenre=document.createElement('div');
+            divGenre.classList.add('data_genre');
+            dataValue.appendChild(divGenre);
+            const addGenre=document.createElement('p');
+            addGenre.style.width='fit-content';
+            addGenre.classList='data_info';
+            addGenre.textContent = `${obtenerGeneros(data.genre_ids)} `;
+            divGenre.appendChild(addGenre);
+        }else{
+            subtitleValue.textContent=`${arraySubtValue[i]}`;
+            dataValue.appendChild(subtitleValue);
+        }
+        
+        
         //localStorage.removeItem('pelicula');
     }
 
@@ -74,16 +89,17 @@ function putData(data){
 
     /*Videos vistos*/
     buttonAddWath.addEventListener('click', function () {
-      localStorage.setItem('watch-video', baseData);
-      localStorage.removeItem('queue_movie');
+        
+      localStorage.setItem(`whatch-${data.original_title}`, baseData);
+      localStorage.removeItem(`Queue-${data.original_title}`);
       changeButton(buttonAddWath, orangeColor, whiteColor, whiteColor);
       changeButton(buttonAddQueue, whiteColor, blackColor, blackColor);
     });
 
     /*Peliculas en cola*/
     buttonAddQueue.addEventListener('click', function () {
-      localStorage.setItem('queue_movie', baseData);
-      localStorage.removeItem('watch-video');
+      localStorage.setItem(`Queue-${data.original_title}`, baseData);
+      localStorage.removeItem(`whatch-${data.original_title}`);
       changeButton(buttonAddQueue, orangeColor, whiteColor, whiteColor);
       changeButton(buttonAddWath, whiteColor, blackColor, blackColor);
     });
@@ -162,6 +178,8 @@ function putData(data){
 
 
 function appearModal(){
+    //const container= document.querySelector('.container');
+    //container.style.background = 'linear-gradient(to right, #ff0000, #00ff00)';
 
     var modal = document.querySelector("#myModal");
     var closeButton= document.querySelector(".button_close");
