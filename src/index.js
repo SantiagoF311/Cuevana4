@@ -4,7 +4,6 @@ import { API_KEY, URL_POPULARES, contenedorPeliculas, mostrarPeliculas, obtenerG
 fetch(URL_POPULARES)
     .then((response) => response.json())
     .then((data) =>{
-        console.log("data", data);
         mostrarPeliculas(data.results);
     })
     .catch((error) => console.log(error));
