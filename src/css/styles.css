@@ -642,6 +642,7 @@ h1 {
   margin: 0;
   margin-top: 10px;
   padding: 10px;
+  line-height: 25px;
 }
 
 .pelicula__estreno {
@@ -704,6 +705,7 @@ h1 {
 .movie_title {
   margin: 0% 0% 2%;
   font-size: 30px;
+  line-height: 30px;
   text-transform: uppercase;
 }
 
@@ -802,11 +804,12 @@ h1 {
       overflow: auto;
   }
 
-    .movie_title {
-      margin: 0% 0% 2%;
-      font-size: 10px;
-      text-transform: uppercase;
-    }
+     .movie_title {
+       margin: 0% 0% 2%;
+       font-size: 30px;
+       line-height: 25px;
+       text-transform: uppercase;
+     }
 
   
 
