@@ -84,8 +84,6 @@ searcher.addEventListener('input', () => {
   }
 });
 
-/*
-
 // Solicitar Datos de las Peliculas a la API
 
 const API_KEY = '2c16d3527aa463666a5b1d2730c96dac';
@@ -96,7 +94,7 @@ let paginaActual = 1;
 let totalPaginas = 50;
 
 //Muestra las peliculas en la pagina principal
-/*
+
 function mostrarPeliculas(peliculas) {
   contenedorPeliculas.innerHTML = '';
   let count = 0;
@@ -139,7 +137,7 @@ function mostrarPeliculas(peliculas) {
     }
   });
 }
-/*
+
 function obtenerGeneros(idsGeneros) {
   const generos = {
     28: 'Acción',
@@ -167,7 +165,7 @@ function obtenerGeneros(idsGeneros) {
 
   return generosPelicula.join(', ');
 }
-/*
+
 function actualizarPaginacion() {
   const paginacion = document.getElementById('paginacion');
   paginacion.innerHTML = '';
@@ -185,7 +183,7 @@ function actualizarPaginacion() {
   }
 
   // Crear los botones de página
-  /*for (let i = limiteInferior; i <= limiteSuperior; i++) {
+  for (let i = limiteInferior; i <= limiteSuperior; i++) {
     const boton = document.createElement('button');
     boton.textContent = i;
     boton.classList.add('pagina');
@@ -212,4 +210,4 @@ function cargarPagina(pagina) {
     });
 }
 
-cargarPagina(paginaActual);*/
+cargarPagina(paginaActual);

@@ -2,37 +2,20 @@
 export const API_KEY = '2c16d3527aa463666a5b1d2730c96dac';
 export const URL_POPULARES = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=es-ES&page=1`;
 export const contenedorPeliculas = document.getElementById('peliculas');
+export var modal = document.querySelector('#myModal');
+import { createModal } from './modalMovies.js';
 
 export function mostrarPeliculas(peliculas) {
-  console.log(peliculas);
+  //console.log(peliculas);
   contenedorPeliculas.innerHTML = '';
+
   peliculas.forEach(pelicula => {
+    //localStorage.setItem('pelicula', )
+
     const imagen = document.createElement('img');
     imagen.src = `https://image.tmdb.org/t/p/w500${pelicula.poster_path}`;
     imagen.alt = pelicula.title;
     imagen.classList.add('pelicula__imagen');
-
-    imagen.addEventListener('click', () => {
-      const targetModal = peliculaDiv.getAttribute('data-target');
-      const modalToShow = document.querySelector(`#${targetModal}`);
-
-      // Actualizar contenido del modal con información de la película
-      modalToShow.querySelector('.modal__titulo').textContent = pelicula.title;
-      modalToShow.querySelector('.modal__genero').textContent = obtenerGeneros(
-        pelicula.genre_ids
-      );
-      modalToShow.querySelector('.modal__sinopsis').textContent =
-        pelicula.overview;
-      modalToShow.querySelector('.modal__estreno').textContent = new Date(
-        pelicula.release_date
-      ).getFullYear();
-      modalToShow.querySelector(
-        '.modal__imagen'
-      ).src = `https://image.tmdb.org/t/p/w500${pelicula.poster_path}`;
-
-      modalToShow.style.display = 'block';
-    });
-    /////
 
     const titulo = document.createElement('h2');
     titulo.textContent = pelicula.title;
@@ -54,13 +37,17 @@ export function mostrarPeliculas(peliculas) {
 
     const peliculaDiv = document.createElement('div');
     peliculaDiv.classList.add('pelicula');
-    peliculaDiv.setAttribute('data-target', 'myModal');
     peliculaDiv.appendChild(imagen);
     peliculaDiv.appendChild(titulo);
     peliculaDiv.appendChild(genero);
     peliculaDiv.appendChild(estreno);
 
     contenedorPeliculas.appendChild(peliculaDiv);
+
+    imagen.addEventListener('click', function informacionModal() {
+      localStorage.setItem('pelicula', JSON.stringify(pelicula));
+      createModal();
+    });
   });
 }
 
