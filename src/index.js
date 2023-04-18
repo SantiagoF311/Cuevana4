@@ -1,6 +1,8 @@
-import { mostrarPeliculas } from './js/PelisPopulares.js';
+import { mostrarPeliculas, obtenerGeneros } from './js/PelisPopulares.js';
+import { createModal } from './js/modalMovies.js';
 import { searcher, searcherList, API_KEY } from './js/searcher.js';
 import { searchedBaseURL, showSearchedMovies } from './js/showMoviesSearch.js';
+
 let URL_POPULARES = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=es-ES&page=1`;
 
 fetch(URL_POPULARES)
@@ -54,24 +56,50 @@ async function searchMovies(query) {
     };
   });
   contenedorPeliculas.innerHTML = '';
-  movies.forEach(movie => {
-    const movieCard = `
-    <div class="pelicula"
-          <div class="movie-card">
-            <img src="${movie.poster}" class="pelicula__imagen" alt="${
-      movie.title
-    }">
-            <h2 class="pelicula__titulo">${movie.title}</h2>
-            <p  style=display: "inline-block" class="pelicula__genero">${obtenerGeneros(
-              movie.genres
-            )}</p>
-            <p  style=display: "inline-block" class="pelicula__estreno">${
-              movie.estreno
-            }</p>
-          </div>
-          </div>
-        `;
-    contenedorPeliculas.innerHTML += movieCard;
+  let count = 0;
+  movies.forEach(pelicula => {
+    //localStorage.setItem('pelicula', )
+    if (count < 18) {
+      const imagen = document.createElement('img');
+      imagen.src = `https://image.tmdb.org/t/p/w500${pelicula.poster}`;
+      imagen.alt = pelicula.title;
+      imagen.classList.add('pelicula__imagen');
+
+      const titulo = document.createElement('h2');
+      titulo.textContent = pelicula.title;
+      titulo.classList.add('pelicula__titulo');
+
+      const sinopsis = document.createElement('p');
+      sinopsis.textContent = pelicula.overview;
+      sinopsis.classList.add('pelicula__sinopsis');
+
+      const genero = document.createElement('p');
+      genero.textContent = `${obtenerGeneros(pelicula.genres)} |`;
+      genero.classList.add('pelicula__genero');
+      genero.style.display = 'inline-block';
+
+      const estreno = document.createElement('p');
+      estreno.textContent = ` ${new Date(pelicula.release_date).getFullYear()}`;
+      estreno.classList.add('pelicula__estreno');
+      estreno.style.display = 'inline-block';
+
+      const peliculaDiv = document.createElement('div');
+      peliculaDiv.classList.add('pelicula');
+      peliculaDiv.appendChild(imagen);
+      peliculaDiv.appendChild(titulo);
+      peliculaDiv.appendChild(genero);
+      peliculaDiv.appendChild(estreno);
+
+      contenedorPeliculas.appendChild(peliculaDiv);
+
+      imagen.addEventListener('click', function informacionModal() {
+        localStorage.setItem('pelicula', JSON.stringify(pelicula));
+        createModal();
+      });
+      count++;
+    } else {
+      return;
+    }
   });
 }
 
@@ -94,77 +122,6 @@ let paginaActual = 1;
 let totalPaginas = 50;
 
 //Muestra las peliculas en la pagina principal
-
-function mostrarPeliculas(peliculas) {
-  contenedorPeliculas.innerHTML = '';
-  let count = 0;
-  peliculas.forEach(pelicula => {
-    if (count < 18) {
-      const imagen = document.createElement('img');
-      imagen.src = `https://image.tmdb.org/t/p/w500${pelicula.poster_path}`;
-      imagen.alt = pelicula.title;
-      imagen.classList.add('pelicula__imagen');
-
-      const titulo = document.createElement('h2');
-      titulo.textContent = pelicula.title;
-      titulo.classList.add('pelicula__titulo');
-
-      const sinopsis = document.createElement('p');
-      sinopsis.textContent = pelicula.overview;
-      sinopsis.classList.add('pelicula__sinopsis');
-
-      const genero = document.createElement('p');
-      genero.textContent = `${obtenerGeneros(pelicula.genre_ids)} |`;
-      genero.classList.add('pelicula__genero');
-      genero.style.display = 'inline-block';
-
-      const estreno = document.createElement('p');
-      estreno.textContent = ` ${new Date(pelicula.release_date).getFullYear()}`;
-      estreno.classList.add('pelicula__estreno');
-      estreno.style.display = 'inline-block';
-
-      const peliculaDiv = document.createElement('div');
-      peliculaDiv.classList.add('pelicula');
-      peliculaDiv.appendChild(imagen);
-      peliculaDiv.appendChild(titulo);
-      peliculaDiv.appendChild(genero);
-      peliculaDiv.appendChild(estreno);
-
-      contenedorPeliculas.appendChild(peliculaDiv);
-      count++;
-    } else {
-      return;
-    }
-  });
-}
-
-function obtenerGeneros(idsGeneros) {
-  const generos = {
-    28: 'Acción',
-    12: 'Aventura',
-    16: 'Animación',
-    35: 'Comedia',
-    80: 'Crimen',
-    99: 'Documental',
-    18: 'Drama',
-    10751: 'Familiar',
-    14: 'Fantasía',
-    36: 'Historia',
-    27: 'Terror',
-    10402: 'Música',
-    9648: 'Misterio',
-    10749: 'Romance',
-    878: 'Ciencia ficción',
-    10770: 'Película de TV',
-    53: 'Suspense',
-    10752: 'Bélica',
-    37: 'Western',
-  };
-
-  const generosPelicula = idsGeneros.map(id => generos[id]);
-
-  return generosPelicula.join(', ');
-}
 
 function actualizarPaginacion() {
   const paginacion = document.getElementById('paginacion');
