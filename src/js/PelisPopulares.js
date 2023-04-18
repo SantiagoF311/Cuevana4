@@ -2,8 +2,12 @@
 export const API_KEY = '2c16d3527aa463666a5b1d2730c96dac';
 export const URL_POPULARES = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=es-ES&page=1`;
 export const contenedorPeliculas = document.getElementById('peliculas');
+export var modal = document.querySelector('#myModal');
+import { createModal } from './modalMovies.js';
 
 export function mostrarPeliculas(peliculas) {
+  let peliculaDiv;
+
   console.log(peliculas);
   contenedorPeliculas.innerHTML = '';
   peliculas.forEach(pelicula => {
@@ -13,10 +17,36 @@ export function mostrarPeliculas(peliculas) {
     imagen.classList.add('pelicula__imagen');
 
     imagen.addEventListener('click', () => {
+      // Actualizar contenido del modal con información de la película
+      
+
+      /*
+      modalToShow.style.display = 'block';*/
+
+      const sinopsis = document.createElement('p');
+      sinopsis.textContent = pelicula.overview;
+      sinopsis.classList.add('pelicula__sinopsis');
+
+      const genero = document.createElement('p');
+      genero.textContent = `${obtenerGeneros(pelicula.genre_ids)} |`;
+      genero.classList.add('pelicula__genero');
+      genero.style.display = 'inline-block';
+
+      const estreno = document.createElement('p');
+      estreno.textContent = ` ${new Date(pelicula.release_date).getFullYear()}`;
+      estreno.classList.add('pelicula__estreno');
+      estreno.style.display = 'inline-block';
+
+      let peliculaDiv = document.createElement('div');
+      peliculaDiv.classList.add('pelicula');
+      peliculaDiv.appendChild(imagen);
+      peliculaDiv.appendChild(titulo);
+      peliculaDiv.appendChild(genero);
+      peliculaDiv.appendChild(estreno);
+
       const targetModal = peliculaDiv.getAttribute('data-target');
       const modalToShow = document.querySelector(`#${targetModal}`);
 
-      // Actualizar contenido del modal con información de la película
       modalToShow.querySelector('.modal__titulo').textContent = pelicula.title;
       modalToShow.querySelector('.modal__genero').textContent = obtenerGeneros(
         pelicula.genre_ids
@@ -30,9 +60,14 @@ export function mostrarPeliculas(peliculas) {
         '.modal__imagen'
       ).src = `https://image.tmdb.org/t/p/w500${pelicula.poster_path}`;
 
-      modalToShow.style.display = 'block';
+      contenedorPeliculas.appendChild(peliculaDiv);
+
+      imagen.addEventListener('click', function informacionModal() {
+        localStorage.setItem('pelicula', JSON.stringify(pelicula));
+        createModal();
+      });
     });
-      /////
+    /////
 
     const titulo = document.createElement('h2');
     titulo.textContent = pelicula.title;
