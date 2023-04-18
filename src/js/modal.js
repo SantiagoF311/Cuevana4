@@ -31,7 +31,7 @@ function putData(data) {
   console.log('data: ', data);
   const vote = data.vote_average;
   const popularity = Number.parseFloat(data.popularity).toFixed(1);
-  const originalTitle = data.original_title.toUpperCase();
+  const originalTitle = data.title.toUpperCase();
   const voteCount = data.vote_count;
   const genres = data.genre_ids;
   const arraySubtValue = [

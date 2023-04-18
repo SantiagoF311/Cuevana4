@@ -1,5 +1,5 @@
 import { mostrarPeliculas, obtenerGeneros } from './js/PelisPopulares.js';
-import { createModal } from './js/modalMovies.js';
+import { createModal } from './js/modal.js';
 import { searcher, searcherList, API_KEY } from './js/searcher.js';
 import { searchedBaseURL, showSearchedMovies } from './js/showMoviesSearch.js';
 
@@ -38,69 +38,14 @@ searcher.addEventListener('input', () => {
     .catch(error => console.log(error));
 });
 
-const searchedBaseURL = 'https://api.themoviedb.org/3/search/movie';
-
 async function searchMovies(query) {
+  const searchedBaseURL = 'https://api.themoviedb.org/3/search/movie';
   const url = `${searchedBaseURL}?api_key=${API_KEY}&query=${query}`;
 
   const response = await fetch(url);
   const data = await response.json();
 
-  const movies = data.results.map(movie => {
-    return {
-      title: movie.title,
-      poster: `https://image.tmdb.org/t/p/w500/${movie.poster_path}`,
-      overview: movie.overview,
-      genres: movie.genre_ids,
-      estreno: movie.release_date,
-    };
-  });
-  contenedorPeliculas.innerHTML = '';
-  let count = 0;
-  movies.forEach(pelicula => {
-    //localStorage.setItem('pelicula', )
-    if (count < 18) {
-      const imagen = document.createElement('img');
-      imagen.src = `https://image.tmdb.org/t/p/w500${pelicula.poster}`;
-      imagen.alt = pelicula.title;
-      imagen.classList.add('pelicula__imagen');
-
-      const titulo = document.createElement('h2');
-      titulo.textContent = pelicula.title;
-      titulo.classList.add('pelicula__titulo');
-
-      const sinopsis = document.createElement('p');
-      sinopsis.textContent = pelicula.overview;
-      sinopsis.classList.add('pelicula__sinopsis');
-
-      const genero = document.createElement('p');
-      genero.textContent = `${obtenerGeneros(pelicula.genres)} |`;
-      genero.classList.add('pelicula__genero');
-      genero.style.display = 'inline-block';
-
-      const estreno = document.createElement('p');
-      estreno.textContent = ` ${new Date(pelicula.release_date).getFullYear()}`;
-      estreno.classList.add('pelicula__estreno');
-      estreno.style.display = 'inline-block';
-
-      const peliculaDiv = document.createElement('div');
-      peliculaDiv.classList.add('pelicula');
-      peliculaDiv.appendChild(imagen);
-      peliculaDiv.appendChild(titulo);
-      peliculaDiv.appendChild(genero);
-      peliculaDiv.appendChild(estreno);
-
-      contenedorPeliculas.appendChild(peliculaDiv);
-
-      imagen.addEventListener('click', function informacionModal() {
-        localStorage.setItem('pelicula', JSON.stringify(pelicula));
-        createModal();
-      });
-      count++;
-    } else {
-      return;
-    }
-  });
+  mostrarPeliculas(data.results);
 }
 
 searcher.addEventListener('input', () => {
