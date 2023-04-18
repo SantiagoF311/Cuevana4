@@ -25,7 +25,6 @@ export function createModal(){
     const data =  JSON.parse(localStorage.getItem('pelicula'));
     console.log("data en creatmodal", data);
     putData(data);
-
     watch(data);
 };
 
@@ -40,9 +39,6 @@ function putData(data){
 
     imageMovie.src=`https://image.tmdb.org/t/p/w500${data.poster_path}`;
     titleMovie.textContent=originalTitle;
-
-    
-    
 
     for(let i=0; i<arraySubtitles.length; i++){
 
@@ -108,7 +104,7 @@ function watch(data){
 
     console.log("entro");
     
-    buttonAddWath.addEventListener('click', function () {
+    buttonAddWath.addEventListener('click', ()=> {
         console.log("data: ", data);
         data.watch='true';
         data.queue='false';
@@ -118,23 +114,12 @@ function watch(data){
             console.log("se agrega el primer elemento", watchMovies);
             localStorage.setItem('watch-movies',JSON.stringify(watchMovies));
         }else{
-            
             if(watchMovies.includes(data)){
                 console.log("objeto encontrado: ")
             }else{
                 watchMovies.push(data);
                 console.log("prueba watch", watchMovies)
             }
-                /*if(watchMovies.includes({data})){
-                    console.log("objeto encontrado: ")
-                    data.innerHTML='';
-
-                }else{
-                    //watchMovies.push(data);
-                    watchMovies.push(data);
-                    localStorage.setItem('watch-movies',JSON.stringify(watchMovies));
-                    data.innerHTML='';
-                }*/
             
         }
 

@@ -49,7 +49,6 @@ export function mostrarPeliculas(peliculas) {
         contenedorPeliculas.appendChild(peliculaDiv);
          
         imagen.addEventListener('click',function informacionModal(){
-
             localStorage.setItem('pelicula', JSON.stringify(pelicula));
             createModal();
         });
