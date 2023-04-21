@@ -1,14 +1,10 @@
 const arraySubtitles=["Vote / Votes","Popularity","Original Title","Genre"];
 export let getSubtitle, getSubtitleValue;
-//let watchMovies=[];
-//localStorage.setItem('watch-movies', watchMovies);
 const orangeColor = '#FF6B01';
 const whiteColor = 'white';
 const blackColor = 'black';
 import { obtenerGeneros } from './PelisPopulares.js';
 const modal = document.querySelector("#myModal");
-var closeButton= document.querySelector(".button_close");
-const body=document.querySelector('body');
 
 
 export function createModal(){
@@ -28,12 +24,6 @@ function putData(data){
     const voteCount= data.vote_count;
     const genres= data.genre_ids;
     const arraySubtValue=[vote + " / "+ voteCount,popularity,originalTitle,genres];
-
-    /*Creating big modal
-    const modal=document.createElement('div');
-    modal.id='myModal';
-    modal.classList='modalContainer';
-    body.appendChild(modal);*/
 
     //container modal
     const secondModal=document.createElement('div');
@@ -144,7 +134,7 @@ function putData(data){
     buttonAddWatch.textContent='ADD WATCH';
     const buttonAddQueue=document.createElement('button');
     buttonAddQueue.textContent='ADD QUEUE';
-    buttonAddQueue.classList='add-button';
+    buttonAddQueue.classList='add-button movie';
     divButtons.appendChild(buttonAddWatch);
     divButtons.appendChild(buttonAddQueue);
     subContentInfo.appendChild(divButtons);
@@ -165,7 +155,7 @@ function putData(data){
    
     
     /*Peliculas en cola*/
-    buttonAddQueue.addEventListener('click', function () {
+    /*buttonAddQueue.addEventListener('click', function () {
 
        // data.watch='false';
         //data.queue='true';
@@ -173,61 +163,57 @@ function putData(data){
         localStorage.setItem('data',JSON.stringify(data));
       changeButton(buttonAddQueue, orangeColor, whiteColor, whiteColor);
       changeButton(buttonAddWatch, whiteColor, blackColor, blackColor);
-    });
+    });*/
 
 }
 
 function watch(data){
     const buttonAddWatch=document.querySelector('.video');
+    const buttonAddQueue=document.querySelector(".movie")
     let watchMovies=localStorage.getItem('watch-movies');
+    let queueMovies=localStorage.getItem('queue-movies');
     let arrayMovies;
     
     
     buttonAddWatch.addEventListener('click', ()=> {
-
-        if(watchMovies===null){
-            arrayMovies=[];
-            console.log('data button: ', data)
-            arrayMovies.push(data);
-            console.log('array-movies',arrayMovies);
-            localStorage.setItem('watch-movies', JSON.stringify(arrayMovies));
-        }else{
-            //watchMovies=localStorage.getItem('watch-movies');
-            //console.log("ver que trae el local: ", watchMovies);
-            const getMovies= JSON.parse(localStorage.getItem("watch-movies"));
-            console.log("name del else", getMovies);
-            const titles=[];
-
-            getMovies.forEach(movie => {
-                console.log("name movie: ", movie.original_title);
-                console.log("name data", data.original_title);
-                titles.push(movie.original_title); 
-            });
-
-            if(titles.includes(data.original_title)){
-                console.log('hi');
-            }else{
-                getMovies.push(data);
-                localStorage.setItem('watch-movies',JSON.stringify(getMovies));
-            }
-
-        }
-        
-        
-        /*if(watchMovies.length===0){
-            data.addWatch=true;
-            data.addQueue=false;
-            watchMovies.push(data);
-            console.log("se agrega el primer elemento", watchMovies);
-            localStorage.setItem('watch-movies',JSON.stringify(watchMovies));
-        }else{*/
-            
-
-            
-            
-        //}
+        addInfoStorage(watchMovies,arrayMovies,data,'watch-movies');
     });
 
+    buttonAddQueue.addEventListener('click', ()=>{
+        addInfoStorage(queueMovies,arrayMovies,data, 'queue-movies');
+    })
+
+}
+
+function addInfoStorage(movies,arrayMovies,data,key){
+    console.log('movies: ', movies);
+    if(movies===null){
+        arrayMovies=[];
+        console.log('data button: ', data)
+        arrayMovies.push(data);
+        console.log('array-movies',arrayMovies);
+        localStorage.setItem(key, JSON.stringify(arrayMovies));
+    }else{
+        console.log("entro");
+        const getMovies= JSON.parse(localStorage.getItem(key));
+        console.log("name del else", getMovies);
+        const titles=[];
+
+        getMovies.forEach(movie => {
+            console.log("name movie: ", movie.original_title);
+            console.log("name data", data.original_title);
+            titles.push(movie.original_title); 
+        });
+
+        if(titles.includes(data.original_title)){
+            console.log('hi');
+        }else{
+            getMovies.push(data);
+            localStorage.setItem(key,JSON.stringify(getMovies));
+        }
+    }
+
+    return;
 }
 
 function appearModal(){
