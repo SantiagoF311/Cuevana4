@@ -6,10 +6,8 @@ const blackColor = 'black';
 import { obtenerGeneros } from './PelisPopulares.js';
 const modal = document.querySelector("#myModal");
 
-
 export function createModal(){
     const data =  JSON.parse(localStorage.getItem('pelicula'));
-    console.log("data en creatmodal", data);
     putData(data);
     appearModal();
     watch(data);
@@ -17,7 +15,6 @@ export function createModal(){
 
 function putData(data){
     
-    console.log('data en putdata;', data);
     const vote=data.vote_average;
     const popularity=Number.parseFloat(data.popularity).toFixed(1);;
     const originalTitle=data.original_title.toUpperCase();
@@ -176,44 +173,69 @@ function watch(data){
     
     
     buttonAddWatch.addEventListener('click', ()=> {
-        addInfoStorage(watchMovies,arrayMovies,data,'watch-movies');
+        
+        const title= addInfoStorage(watchMovies,arrayMovies,data,'watch-movies');
+        updateStorage(title,'watch-movies','queue-movies');
+        
     });
 
     buttonAddQueue.addEventListener('click', ()=>{
-        addInfoStorage(queueMovies,arrayMovies,data, 'queue-movies');
+        
+        let title= addInfoStorage(queueMovies,arrayMovies,data, 'queue-movies');
+        updateStorage(title,'queue-movies','watch-movies');
     })
 
 }
 
 function addInfoStorage(movies,arrayMovies,data,key){
-    console.log('movies: ', movies);
     if(movies===null){
         arrayMovies=[];
         console.log('data button: ', data)
         arrayMovies.push(data);
         console.log('array-movies',arrayMovies);
         localStorage.setItem(key, JSON.stringify(arrayMovies));
+        return data.original_title;
     }else{
-        console.log("entro");
         const getMovies= JSON.parse(localStorage.getItem(key));
-        console.log("name del else", getMovies);
         const titles=[];
 
         getMovies.forEach(movie => {
-            console.log("name movie: ", movie.original_title);
-            console.log("name data", data.original_title);
             titles.push(movie.original_title); 
         });
 
         if(titles.includes(data.original_title)){
-            console.log('hi');
+            console.log('encontrado');
         }else{
             getMovies.push(data);
             localStorage.setItem(key,JSON.stringify(getMovies));
+            //el titulo que se agrega se debe buscar en el otro local storage 
+            console.log("title__prueba", data.original_title);
+            return data.original_title;;
         }
     }
+    
+}
 
-    return;
+function updateStorage(title,currentKey,changeKey){
+    let titles=[];
+    console.log('title----', title);
+    const getWatch=JSON.parse(localStorage.getItem(currentKey));
+    if(getWatch===null || getWatch===undefined){
+        console.log('ingreso');
+    }else{
+        getWatch.forEach(watch=>{
+            console.log('getwatch')
+            titles.push(watch.original_title);
+            console.log('titles: ',titles);
+        });
+
+        if(titles.includes(title)){
+            let index = titles.indexOf(title);
+            console.log('index: ', index);
+            getWatch.splice(index, 1);
+            localStorage.setItem(changeKey, JSON.stringify( getWatch));
+        }
+    }
 }
 
 function appearModal(){
