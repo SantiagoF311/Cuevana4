@@ -8,50 +8,46 @@ export const contenedorPeliculas = document.getElementById('peliculas');
 export function mostrarPeliculas(peliculas) {
   //console.log(peliculas);
   contenedorPeliculas.innerHTML = '';
-  let count = 0;
+
   peliculas.forEach(pelicula => {
     //localStorage.setItem('pelicula', )
-    if (count < 18) {
-      const imagen = document.createElement('img');
-      imagen.src = `https://image.tmdb.org/t/p/w500${pelicula.poster_path}`;
-      imagen.alt = pelicula.title;
-      imagen.classList.add('pelicula__imagen');
 
-      const titulo = document.createElement('h2');
-      titulo.textContent = pelicula.title;
-      titulo.classList.add('pelicula__titulo');
+    const imagen = document.createElement('img');
+    imagen.src = `https://image.tmdb.org/t/p/w500${pelicula.poster_path}`;
+    imagen.alt = pelicula.title;
+    imagen.classList.add('pelicula__imagen');
 
-      const sinopsis = document.createElement('p');
-      sinopsis.textContent = pelicula.overview;
-      sinopsis.classList.add('pelicula__sinopsis');
+    const titulo = document.createElement('h2');
+    titulo.textContent = pelicula.title;
+    titulo.classList.add('pelicula__titulo');
 
-      const genero = document.createElement('p');
-      genero.textContent = `${obtenerGeneros(pelicula.genre_ids)} |`;
-      genero.classList.add('pelicula__genero');
-      genero.style.display = 'inline-block';
+    const sinopsis = document.createElement('p');
+    sinopsis.textContent = pelicula.overview;
+    sinopsis.classList.add('pelicula__sinopsis');
 
-      const estreno = document.createElement('p');
-      estreno.textContent = ` ${new Date(pelicula.release_date).getFullYear()}`;
-      estreno.classList.add('pelicula__estreno');
-      estreno.style.display = 'inline-block';
+    const genero = document.createElement('p');
+    genero.textContent = `${obtenerGeneros(pelicula.genre_ids)} |`;
+    genero.classList.add('pelicula__genero');
+    genero.style.display = 'inline-block';
 
-      const peliculaDiv = document.createElement('div');
-      peliculaDiv.classList.add('pelicula');
-      peliculaDiv.appendChild(imagen);
-      peliculaDiv.appendChild(titulo);
-      peliculaDiv.appendChild(genero);
-      peliculaDiv.appendChild(estreno);
+    const estreno = document.createElement('p');
+    estreno.textContent = ` ${new Date(pelicula.release_date).getFullYear()}`;
+    estreno.classList.add('pelicula__estreno');
+    estreno.style.display = 'inline-block';
 
-      contenedorPeliculas.appendChild(peliculaDiv);
+    const peliculaDiv = document.createElement('div');
+    peliculaDiv.classList.add('pelicula');
+    peliculaDiv.appendChild(imagen);
+    peliculaDiv.appendChild(titulo);
+    peliculaDiv.appendChild(genero);
+    peliculaDiv.appendChild(estreno);
 
-      imagen.addEventListener('click', function informacionModal() {
-        localStorage.setItem('pelicula', JSON.stringify(pelicula));
-        createModal();
-      });
-      count++;
-    } else {
-      return;
-    }
+    contenedorPeliculas.appendChild(peliculaDiv);
+
+    imagen.addEventListener('click', function informacionModal() {
+      localStorage.setItem('pelicula', JSON.stringify(pelicula));
+      createModal();
+    });
   });
 }
 
@@ -82,4 +78,3 @@ export function obtenerGeneros(idsGeneros) {
 
   return generosPelicula.join(', ');
 }
-
