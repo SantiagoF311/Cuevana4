@@ -12,7 +12,34 @@ export function createModal(){
     putData(data);
     appearModal(data);
     watch(data);
+    checkData(data.original_title);
 };
+
+function checkData(dataTitle){
+    let storageWatchTitles=[];
+    let storageQueueTitles=[];
+    const buttonAddWatch=document.querySelector('.video');
+    const buttonAddQueue=document.querySelector(".movie")
+
+    const checkWatchMovies=JSON.parse(localStorage.getItem('watch-movies'));
+    const checkQueueMovies=JSON.parse(localStorage.getItem('queue-movies'));
+
+    checkWatchMovies.forEach(movie=>{
+        storageWatchTitles.push(movie.original_title);
+    });
+
+    checkQueueMovies.forEach(movie=>{
+        storageQueueTitles.push(movie.original_title);
+    })
+
+    if(storageWatchTitles.includes(dataTitle)){
+        changeButton(buttonAddWatch, orangeColor, whiteColor, whiteColor);
+        changeButton(buttonAddQueue, whiteColor, blackColor, blackColor);
+    }else if(storageQueueTitles.includes(dataTitle)){
+        changeButton(buttonAddQueue, orangeColor, whiteColor, whiteColor);
+        changeButton(buttonAddWatch, whiteColor, blackColor, blackColor);
+    }
+}
 
 function putData(data){
     
@@ -206,7 +233,7 @@ function addInfoStorage(movies,arrayMovies,data,key){
     let index;
     if(movies===null){
         arrayMovies=[];
-        addProperty(key,data);
+        //addProperty(key,data);
         arrayMovies.push(data);
         localStorage.setItem(key, JSON.stringify(arrayMovies));
         return data.original_title;
@@ -222,10 +249,9 @@ function addInfoStorage(movies,arrayMovies,data,key){
 
         if(titles.includes(data.original_title)){
             console.log('encontrado', data.watch);
-            
                 
         }else{
-            addProperty(key,data);
+            //addProperty(key,data);
             getMovies.push(data);
             localStorage.setItem(key,JSON.stringify(getMovies));
             //el titulo que se agrega se debe buscar en el otro local storage 
@@ -233,20 +259,6 @@ function addInfoStorage(movies,arrayMovies,data,key){
         }
     }
     
-}
-
-function addProperty(key,data){
-    if(key==='watch-movies'){
-        data.watch='true';
-        data.queue='false';
-        return;
-        
-    }else if(key==='queue-movies'){
-        data.watch='false';
-        data.queue='true';
-        return;
-        
-    }
 }
 
 function appearModal(data){
