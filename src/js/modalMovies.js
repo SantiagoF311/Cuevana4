@@ -23,22 +23,33 @@ function checkData(dataTitle){
 
     const checkWatchMovies=JSON.parse(localStorage.getItem('watch-movies'));
     const checkQueueMovies=JSON.parse(localStorage.getItem('queue-movies'));
+    console.log("prueba: " , checkQueueMovies);
+    if(checkQueueMovies===null){
+        console.log('hola');
+    }else{
+        checkQueueMovies.forEach(movie=>{
+            storageQueueTitles.push(movie.original_title);
+        })
 
-    checkWatchMovies.forEach(movie=>{
-        storageWatchTitles.push(movie.original_title);
-    });
-
-    checkQueueMovies.forEach(movie=>{
-        storageQueueTitles.push(movie.original_title);
-    })
-
-    if(storageWatchTitles.includes(dataTitle)){
-        changeButton(buttonAddWatch, orangeColor, whiteColor, whiteColor);
-        changeButton(buttonAddQueue, whiteColor, blackColor, blackColor);
-    }else if(storageQueueTitles.includes(dataTitle)){
-        changeButton(buttonAddQueue, orangeColor, whiteColor, whiteColor);
-        changeButton(buttonAddWatch, whiteColor, blackColor, blackColor);
+        if(storageQueueTitles.includes(dataTitle)){
+            changeButton(buttonAddQueue, orangeColor, whiteColor, whiteColor);
+            changeButton(buttonAddWatch, whiteColor, blackColor, blackColor);
+        }
     }
+
+    if(checkWatchMovies===null){
+        console.log('hola 2')
+    }else{
+        checkWatchMovies.forEach(movie=>{
+            storageWatchTitles.push(movie.original_title);
+        });
+    
+        if(storageWatchTitles.includes(dataTitle)){
+            changeButton(buttonAddWatch, orangeColor, whiteColor, whiteColor);
+            changeButton(buttonAddQueue, whiteColor, blackColor, blackColor);
+         }
+    }
+    
 }
 
 function putData(data){
