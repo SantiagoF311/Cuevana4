@@ -174,6 +174,54 @@
     position: relative;
     top: -25px;
   }
+  .button__container {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: blue;
+    width: 340px;
+    height: 60px;
+  }
+  .library__Button {
+    margin: 7.5px;
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    color: white;
+    border: 1px solid #FFFFFF;
+    background-color: transparent;
+  }
+  .library__Butto{
+    margin: 7.5px;
+    width: 200px;
+    height: 20px;
+    border-radius: 5px;
+    color: white;
+    border: 1px solid #FFFFFF;
+    background-color: transparent;
+  }
+  .library__Butto:hover {
+    background-color: #FF6B08;
+    border-style: none;
+    cursor: pointer;
+  }
+
+  .library__Button:hover {
+    background-color: #FF6B08;
+    border-style: none;
+    cursor: pointer;
+  }
+
+  .library__Button:focus {
+    background-color: #FF6B08;
+    border-style: none;
+  }
+  .no-content{
+    text-align: center;
+    font-size: 25px;
+  }
 }
 
 /*++++++++++++++++++++++++++++++ IPADS TABLETS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
@@ -187,6 +235,10 @@
     height: 230px;
     margin: 0 auto;
     background-image: url(../../Images/FondoJPG.jpg);
+  }
+  .no-content{
+    text-align: center;
+    font-size: 25px;
   }
 
   .icon {
@@ -352,6 +404,50 @@
     position: relative;
     top: -25px;
   }
+  .button__container {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: blue;
+    width: 340px;
+    height: 60px;
+  }
+  .library__Button {
+    margin: 7.5px;
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    color: white;
+    border: 1px solid #FFFFFF;
+    background-color: transparent;
+  }
+  .library__Butto{
+    margin: 7.5px;
+    width: 200px;
+    height: 20px;
+    border-radius: 5px;
+    color: white;
+    border: 1px solid #FFFFFF;
+    background-color: transparent;
+  }
+  .library__Butto:hover {
+    background-color: #FF6B08;
+    border-style: none;
+    cursor: pointer;
+  }
+
+  .library__Button:hover {
+    background-color: #FF6B08;
+    border-style: none;
+    cursor: pointer;
+  }
+
+  .library__Button:focus {
+    background-color: #FF6B08;
+    border-style: none;
+  }
 }
 
 
@@ -376,6 +472,10 @@
   
       .icon {
         fill: white;
+      }
+      .no-content{
+        text-align: center;
+        font-size: 25px;
       }
   
       .nav-main {
@@ -451,6 +551,20 @@
         color: white;
         border: 1px solid #FFFFFF;
         background-color: transparent;
+      }
+      .library__Butto{
+        margin: 7.5px;
+        width: 200px;
+        height: 20px;
+        border-radius: 5px;
+        color: white;
+        border: 1px solid #FFFFFF;
+        background-color: transparent;
+      }
+      .library__Butto:hover {
+        background-color: #FF6B08;
+        border-style: none;
+        cursor: pointer;
       }
   
       .library__Button:hover {
@@ -592,6 +706,11 @@ body {
   margin: 0 auto;
   padding: 0 20px;
   margin-top: 60px;
+  
+}
+.containery{
+  color: #333;
+  background-color: #FF6B01;
 }
 
 h1 {
@@ -846,4 +965,5 @@ h1 {
   .add_button {
     width: 46%;
   }
+  
 }

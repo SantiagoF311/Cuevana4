@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./css/libraryStyles.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
   </head>
 
   <body>
@@ -28,12 +31,14 @@
       </nav>
 
       <div class="button__container">
-        <button class="library__Button">WATCHED</button>
-        <button class="library__Button">QUEUE</button>
+        <button type="button" class="library__Button" >WATCHED</button>
+        <button type="button"class="library__Button"id="button_Queue">QUEUE</button>
+        <button type="button" class="library__Butto" id ="resett">CLEAR LIST</button>
       </div>
     </header>
 
     <div class="container">
+      
       <div class="peliculas" id="peliculas"></div>
     </div>
 
@@ -51,7 +56,17 @@
         </div>
       </div>
     </footer>
+<!--Modal-->
 
-    <script type="module" src="./index.js"></script>
+<div id="myModal" class="modalContainer">
+</div>
+    <!--imagen-->
+
+
+    <!--contenido de la pelicula-->
+
+  </div>
+</div>
+    <script type="module" src="./js/myLibrary.js"></script>
   </body>
 </html>
