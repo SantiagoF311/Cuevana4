@@ -106,20 +106,11 @@ function cargarPagina(pagina) {
     .then(respuesta => respuesta.json())
     .then(datos => {
       mostrarPeliculas(datos.results);
-      
+
       paginaActual = datos.page;
       totalPaginas = datos.total_pages;
       actualizarPaginacion();
     });
-    
 }
 
 cargarPagina(paginaActual);
-
-
-
-
-
-
-    
-    
