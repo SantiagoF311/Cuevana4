@@ -59,8 +59,6 @@ searcher.addEventListener('input', () => {
 
 // Solicitar Datos de las Peliculas a la API
 
-const API_KEY = '2c16d3527aa463666a5b1d2730c96dac';
-
 const contenedorPeliculas = document.getElementById('peliculas');
 
 let paginaActual = 1;
